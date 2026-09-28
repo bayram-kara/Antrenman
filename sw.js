@@ -1,26 +1,26 @@
 // Uygulamayı güncellediğinde bu numarayı bir artır (v2, v3...)
-const VERSION = "v3";
+const VERSION = "v4";
 const CACHE = "ev-antrenman-" + VERSION;
 const FILES = [
   "./",
   "index.html",
   "manifest.webmanifest",
-  "icons/icon-192.png",
-  "icons/icon-512.png",
-  "icons/icon-maskable-512.png",
-  "icons/apple-touch-icon.png",
-  "fonts/Barlow-400-latin-ext.woff2",
-  "fonts/Barlow-400-latin.woff2",
-  "fonts/Barlow-500-latin-ext.woff2",
-  "fonts/Barlow-500-latin.woff2",
-  "fonts/Barlow-600-latin-ext.woff2",
-  "fonts/Barlow-600-latin.woff2",
-  "fonts/BarlowCondensed-500-latin-ext.woff2",
-  "fonts/BarlowCondensed-500-latin.woff2",
-  "fonts/BarlowCondensed-600-latin-ext.woff2",
-  "fonts/BarlowCondensed-600-latin.woff2",
-  "fonts/BarlowCondensed-700-latin-ext.woff2",
-  "fonts/BarlowCondensed-700-latin.woff2",
+  "icon-192.png",
+  "icon-512.png",
+  "icon-maskable-512.png",
+  "apple-touch-icon.png",
+  "Barlow-400-latin-ext.woff2",
+  "Barlow-400-latin.woff2",
+  "Barlow-500-latin-ext.woff2",
+  "Barlow-500-latin.woff2",
+  "Barlow-600-latin-ext.woff2",
+  "Barlow-600-latin.woff2",
+  "BarlowCondensed-500-latin-ext.woff2",
+  "BarlowCondensed-500-latin.woff2",
+  "BarlowCondensed-600-latin-ext.woff2",
+  "BarlowCondensed-600-latin.woff2",
+  "BarlowCondensed-700-latin-ext.woff2",
+  "BarlowCondensed-700-latin.woff2",
 ];
 
 self.addEventListener("install", e => {
