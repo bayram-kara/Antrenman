@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ev Antrenmanı</title>
+<meta name="theme-color" content="#1D2330">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Antrenman">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<style>
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/Barlow-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/Barlow-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/Barlow-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/Barlow-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/Barlow-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/Barlow-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/BarlowCondensed-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/BarlowCondensed-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/BarlowCondensed-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/BarlowCondensed-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/BarlowCondensed-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/BarlowCondensed-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+:root{
+  --bg:#E8EBEE; --surface:#F7F8F9; --ink:#1D2330; --muted:#5E6878; --line:#CDD3DA;
+  --a:#2456C9; --a-soft:#DCE5F8; --b:#C1352C; --b-soft:#F6DEDB; --gold:#D9A21B; --ok:#2E8B57;
+  --day:var(--a); --day-soft:var(--a-soft);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#161A21; --surface:#1F242D; --ink:#E9ECF1; --muted:#9AA3B2; --line:#323946;
+    --a:#6F97F2; --a-soft:#22304F; --b:#EE6B61; --b-soft:#4A2522; --gold:#F0BE45; --ok:#5CC08A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#161A21; --surface:#1F242D; --ink:#E9ECF1; --muted:#9AA3B2; --line:#323946;
+  --a:#6F97F2; --a-soft:#22304F; --b:#EE6B61; --b-soft:#4A2522; --gold:#F0BE45; --ok:#5CC08A;
+}
+body.dayB{--day:var(--b); --day-soft:var(--b-soft)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.45 Barlow,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:560px;margin:0 auto;padding:16px 14px 120px}
+h1,h2,h3,.num{font-family:"Barlow Condensed","Arial Narrow",Barlow,sans-serif;letter-spacing:.01em}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:6px 0 14px}
+header h1{font-size:34px;line-height:1;margin:0;font-weight:700}
+header .sub{color:var(--muted);font-size:14px}
+nav{display:flex;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:16px}
+nav button{flex:1;border:0;background:none;color:var(--muted);font:600 15px Barlow,sans-serif;padding:9px 0;border-radius:9px;cursor:pointer}
+nav button[aria-selected="true"]{background:var(--ink);color:var(--surface)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--day);outline-offset:2px}
+
+/* day plates */
+.plates{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.plate{position:relative;border:2px solid transparent;border-radius:999px;aspect-ratio:1/1;max-height:170px;justify-self:center;width:100%;max-width:170px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-family:"Barlow Condensed",sans-serif;
+  box-shadow:inset 0 0 0 10px rgba(255,255,255,.12), inset 0 0 0 22px rgba(0,0,0,.08)}
+.plate::after{content:"";position:absolute;width:18%;height:18%;border-radius:50%;background:var(--bg);box-shadow:inset 0 2px 4px rgba(0,0,0,.25)}
+.plate .big{font-size:40px;font-weight:700;line-height:1;margin-bottom:28px}
+.plate .lbl{position:absolute;bottom:22%;font-size:15px;font-weight:600;opacity:.95}
+.plate.A{background:var(--a)} .plate.B{background:var(--b)}
+.plate[aria-pressed="false"]{filter:saturate(.25);opacity:.55}
+.plate[aria-pressed="true"]{border-color:var(--ink)}
+.hint{text-align:center;color:var(--muted);font-size:14px;margin:-4px 0 14px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+.card h3{margin:0 0 2px;font-size:22px;font-weight:600;line-height:1.1}
+.meta{color:var(--muted);font-size:14px}
+.card.ex{border-left:5px solid var(--day)}
+.flag{display:inline-block;background:var(--gold);color:#1D2330;font-size:12px;font-weight:600;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+.last{font-size:13px;color:var(--muted);margin-top:4px}
+
+.sets{margin-top:10px;display:grid;gap:6px}
+.set{display:grid;grid-template-columns:28px 1fr 1fr 44px;gap:8px;align-items:center}
+.set.nokg{grid-template-columns:28px 1fr 44px}
+.set .n{font-family:"Barlow Condensed",sans-serif;font-weight:600;color:var(--muted);text-align:center}
+.field{position:relative}
+.field input{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:9px;padding:9px 34px 9px 10px;font:600 17px Barlow,sans-serif}
+.field span{position:absolute;right:9px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:13px;pointer-events:none}
+.chk{width:44px;height:40px;border-radius:10px;border:2px solid var(--line);background:transparent;cursor:pointer;display:grid;place-items:center;color:transparent;font-size:20px}
+.chk[aria-pressed="true"]{background:var(--day);border-color:var(--day);color:#fff}
+
+.checklist{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.checklist li{display:flex;gap:10px;align-items:flex-start}
+.checklist button{flex:0 0 auto;width:28px;height:28px;border-radius:8px;border:2px solid var(--line);background:none;cursor:pointer;color:transparent;font-size:15px}
+.checklist button[aria-pressed="true"]{background:var(--day);border-color:var(--day);color:#fff}
+.checklist .t{font-weight:600}
+.checklist .d{color:var(--muted);font-size:14px}
+details summary{cursor:pointer;color:var(--day);font-weight:600;font-size:14px;margin-top:8px}
+details p{margin:6px 0;font-size:14px;color:var(--muted)}
+
+.pain{display:flex;align-items:center;gap:12px;margin-top:10px}
+.pain input[type=range]{flex:1;accent-color:var(--day)}
+.pain .num{font-size:30px;font-weight:700;min-width:36px;text-align:right}
+.warn{margin-top:8px;font-size:14px;color:var(--b);font-weight:600}
+textarea{width:100%;margin-top:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:9px;padding:9px;font:15px Barlow,sans-serif;min-height:64px;resize:vertical}
+
+.save{width:100%;border:0;border-radius:12px;background:var(--day);color:#fff;font:700 20px "Barlow Condensed",sans-serif;padding:14px;cursor:pointer;letter-spacing:.02em}
+.save:disabled{opacity:.5;cursor:default}
+.ghost{background:none;border:1px solid var(--line);color:var(--muted);border-radius:10px;padding:8px 12px;font:600 14px Barlow,sans-serif;cursor:pointer}
+.status{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
+
+/* timer */
+.timer{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--surface);display:none;align-items:center;gap:12px;justify-content:center}
+.timer.on{display:flex}
+.timer .num{font-size:34px;font-weight:700;min-width:84px;text-align:center}
+.timer button{background:none;border:1px solid rgba(255,255,255,.35);color:inherit;border-radius:9px;padding:7px 11px;font:600 14px Barlow,sans-serif;cursor:pointer}
+.timer .bar{position:absolute;left:0;top:0;height:3px;background:var(--gold)}
+
+/* history */
+.hist-item{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.tag{font:700 14px "Barlow Condensed",sans-serif;color:#fff;border-radius:6px;padding:2px 8px}
+.tag.A{background:var(--a)} .tag.B{background:var(--b)}
+.hist-ex{font-size:14px;color:var(--muted);margin-top:6px}
+.hist-ex b{color:var(--ink);font-weight:600}
+select{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:9px;padding:9px;font:600 15px Barlow,sans-serif}
+.chart{margin-top:10px;overflow-x:auto}
+.chart svg{display:block;width:100%;height:auto}
+.empty{text-align:center;color:var(--muted);padding:24px 8px}
+.rules p{margin:6px 0;font-size:15px}
+.rules h3{margin-top:4px}
+
+.howbtn{border:1px solid var(--line);background:var(--bg);color:var(--day);border-radius:8px;padding:4px 9px;font:600 13px Barlow,sans-serif;cursor:pointer;white-space:nowrap}
+.exhead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.checklist .howmini{margin-left:auto;align-self:center;width:auto;height:auto;border:1px solid var(--line);color:var(--day);font:600 12px Barlow,sans-serif;padding:3px 8px;border-radius:7px;background:var(--bg)}
+.sheet-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:20}
+.sheet-bg.on{display:block}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-height:88vh;overflow:auto;background:var(--surface);border-radius:18px 18px 0 0;padding:14px 16px calc(18px + env(safe-area-inset-bottom,0px));z-index:21;transform:translateY(105%);transition:transform .25s ease;max-width:560px;margin:0 auto}
+.sheet.on{transform:none}
+.sheet h3{margin:0;font-size:26px}
+.sheet .anim{background:var(--bg);border-radius:12px;margin:10px 0;border:1px solid var(--line)}
+.sheet .anim svg{display:block;width:100%;height:auto}
+.sheet ol{margin:8px 0 12px;padding-left:22px}
+.sheet li{margin:5px 0}
+.sheet .row{display:flex;gap:8px;justify-content:space-between;align-items:center}
+.sheet .grab{width:40px;height:4px;border-radius:2px;background:var(--line);margin:0 auto 10px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.stat{background:var(--bg);border-radius:10px;padding:10px 12px}
+.stat .num{font-size:30px;font-weight:700;line-height:1}
+.stat .num small{font-size:16px;font-weight:600;color:var(--muted);margin-left:2px}
+.stat .lb{font-size:13px;color:var(--muted);margin-top:3px}
+.stat .dl{font-size:13px;font-weight:600;margin-top:2px}
+.dl.down{color:var(--ok)} .dl.up{color:var(--b)}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.mgrid label{font-size:13px;color:var(--muted);display:block}
+.mgrid .field{margin-top:3px}
+.mrow{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.mrow .x{border:0;background:none;color:var(--muted);font-size:13px;cursor:pointer;text-decoration:underline}
+.sugg{margin-top:8px;font-size:14px;font-weight:600;border-radius:8px;padding:7px 10px}
+.sugg.up{background:color-mix(in srgb, var(--ok) 14%, transparent);color:var(--ok)}
+.sugg.hold{background:color-mix(in srgb, var(--gold) 20%, transparent);color:var(--ink)}
+.checkin{border:2px solid var(--gold)}
+.trend{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.trend button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:10px 4px;font:600 15px Barlow,sans-serif;cursor:pointer}
+.trend button[data-trend="worse"]{color:var(--b)}
+.cal{display:grid;grid-template-columns:38px repeat(7,1fr);gap:4px;margin-top:12px;align-items:center}
+.cal .ch{font-size:12px;color:var(--muted);text-align:center}
+.cal .cw{font-size:12px;color:var(--muted);font-weight:600}
+.cal .cw.met{color:var(--ok)}
+.cal .cc{aspect-ratio:1/1;border-radius:6px;background:var(--bg);display:grid;place-items:center;font:700 13px "Barlow Condensed",sans-serif;color:#fff}
+.cal .cc.A{background:var(--a)} .cal .cc.B{background:var(--b)}
+.cal .cc.fut{opacity:.35}
+.cal .cc.today{outline:2px solid var(--ink);outline-offset:-2px}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted);margin-top:4px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+.prow{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:6px 0;border-bottom:1px solid var(--line)}
+.brow{margin-top:10px}
+.ghost.wide{width:100%;padding:12px}
+.banner{background:var(--gold);color:#1D2330;border-radius:12px;padding:10px 12px;font-size:14px;font-weight:600;margin-bottom:12px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.banner button{border:0;background:#1D2330;color:#fff;border-radius:8px;padding:6px 10px;font:600 13px Barlow,sans-serif;cursor:pointer}
+.eqbtn{margin-top:8px;border:0;background:none;color:var(--day);font:600 13px Barlow,sans-serif;cursor:pointer;padding:4px 0;text-decoration:underline}
+.dayseg{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:12px 0 8px}
+.dayseg button{border:1px solid var(--line);background:var(--bg);color:var(--muted);border-radius:10px;padding:8px;font:600 15px Barlow,sans-serif;cursor:pointer}
+.dayseg button[data-pday="A"][aria-pressed="true"]{background:var(--a);border-color:var(--a);color:#fff}
+.dayseg button[data-pday="B"][aria-pressed="true"]{background:var(--b);border-color:var(--b);color:#fff}
+.prog-item{border-bottom:1px solid var(--line);padding:10px 0}
+.prog-item .top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.prog-item .nm{font-weight:600}
+.prog-item .ctl{display:flex;gap:4px;flex-shrink:0}
+.prog-item .ctl button{width:34px;height:34px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;cursor:pointer;font-size:15px}
+.prog-item .ctl button:disabled{opacity:.3}
+.pedit{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.pedit label{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:3px}
+.pedit label:first-child{grid-column:1/-1}
+.pedit input,.pedit select{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:9px;padding:9px;font:600 15px Barlow,sans-serif;width:100%}
+.pedit .save{grid-column:1/-1;font-size:17px;padding:11px}
+.addrow{display:flex;gap:8px;margin-top:12px}
+.addrow select{flex:1}
+.ring{--v:0;width:170px;height:170px;margin:8px auto 14px;border-radius:50%;display:grid;place-items:center;text-align:center;
+  background:conic-gradient(var(--c) calc(var(--v)*1%), var(--line) 0)}
+.ring>div{width:136px;height:136px;border-radius:50%;background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .num{font-size:52px;font-weight:700;line-height:1}
+.ring .num small{font-size:22px}
+.parts{margin-top:14px;display:grid;gap:10px}
+.part .pt{display:flex;justify-content:space-between;font-size:15px}
+.part .bar{height:7px;border-radius:4px;background:var(--line);overflow:hidden;margin:4px 0 2px}
+.part .bar i{display:block;height:100%;background:var(--pc)}
+.scb{color:#fff;font:700 14px "Barlow Condensed",sans-serif;border-radius:6px;padding:2px 7px;margin-right:8px}
+.hist-item>.meta{display:flex;align-items:center}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Ev antrenmanı</h1>
+      <div class="sub" id="weekInfo">Üst / alt bölme, haftada 3 gün</div>
+    </div>
+  </header>
+
+  <nav role="tablist">
+    <button role="tab" aria-selected="true" data-tab="today">Bugün</button>
+    <button role="tab" aria-selected="false" data-tab="history">Geçmiş</button>
+    <button role="tab" aria-selected="false" data-tab="body">Vücut</button>
+    <button role="tab" aria-selected="false" data-tab="rules">Ayarlar</button>
+  </nav>
+
+  <section id="tab-today">
+    <div class="plates">
+      <button class="plate A" data-day="A" aria-pressed="true"><span class="big">A</span><span class="lbl">Üst vücut</span></button>
+      <button class="plate B" data-day="B" aria-pressed="false"><span class="big">B</span><span class="lbl">Alt + core</span></button>
+    </div>
+    <div class="banner" id="backupBanner" hidden><span id="backupBannerText"></span><button id="bannerGo">Yedekle</button></div>
+    <p class="hint" id="nextHint"></p>
+    <p class="hint" id="clock" aria-live="off"></p>
+    <div id="session"></div>
+  </section>
+
+  <section id="tab-history" hidden>
+    <div class="card"><h3>Süreklilik</h3><div id="streak"></div></div>
+    <div class="card"><h3>Bel ağrısı</h3><div class="chart" id="painChart"></div><div id="painAnalysis"></div></div>
+    <div class="card">
+      <h3>İlerleme</h3>
+      <select id="exPick" aria-label="Hareket seç"></select>
+      <div class="chart" id="chart"></div>
+    </div>
+    <div id="histList"></div>
+  </section>
+
+  <section id="tab-body" hidden>
+    <div class="card">
+      <h3>Son durum</h3>
+      <div class="stats" id="bodyStats"></div>
+      <div class="last" id="bfNote"></div>
+    </div>
+    <div class="card">
+      <h3>Yeni ölçüm</h3>
+      <div class="meta">Haftada bir, sabah aç karnına, tuvaletten sonra. Mezurayı sıkmadan, cilde temas edecek şekilde.</div>
+      <div class="mgrid">
+        <div><label for="m_kg">Kilo</label><div class="field"><input id="m_kg" inputmode="decimal"><span>kg</span></div></div>
+        <div><label for="m_waist">Bel (göbek hizası)</label><div class="field"><input id="m_waist" inputmode="decimal"><span>cm</span></div></div>
+        <div><label for="m_neck">Boyun (âdem elması altı)</label><div class="field"><input id="m_neck" inputmode="decimal"><span>cm</span></div></div>
+        <div><label for="m_arm">Kol (pazı, gevşek)</label><div class="field"><input id="m_arm" inputmode="decimal"><span>cm</span></div></div>
+        <div><label for="m_chest">Göğüs (meme ucu hizası)</label><div class="field"><input id="m_chest" inputmode="decimal"><span>cm</span></div></div>
+        <div><label for="m_height">Boy</label><div class="field"><input id="m_height" inputmode="decimal" value="168"><span>cm</span></div></div>
+      </div>
+      <button class="save" id="mSave" style="margin-top:12px">Ölçümü kaydet</button>
+      <div class="status" id="mStatus"></div>
+    </div>
+    <div class="card">
+      <h3>Grafik</h3>
+      <select id="mPick" aria-label="Ölçü seç">
+        <option value="kg">Kilo</option><option value="bf">Yağ oranı</option><option value="lean">Yağsız kütle</option>
+        <option value="waist">Bel</option><option value="chest">Göğüs</option><option value="arm">Kol</option><option value="neck">Boyun</option><option value="bmi">BMI</option>
+      </select>
+      <div class="chart" id="mChart"></div>
+    </div>
+    <div id="mList"></div>
+  </section>
+
+  <section id="tab-rules" hidden>
+    <div class="card" id="progCard">
+      <h3>Program</h3>
+      <div class="meta">Değişiklik bir sonraki antrenmandan itibaren geçerli. Geçmiş kayıtlar etkilenmez.</div>
+      <div class="dayseg"><button data-pday="A" aria-pressed="true">A günü</button><button data-pday="B" aria-pressed="false">B günü</button></div>
+      <div id="progList"></div>
+      <div class="addrow">
+        <select id="addPick" aria-label="Eklenecek hareket"></select>
+        <button class="ghost" id="addBtn">Ekle</button>
+      </div>
+      <div id="customForm" hidden class="pedit">
+        <label>Hareket adı<input id="cName" placeholder="ör. Şınav"></label>
+        <label>Ölçü<select id="cKind"><option value="kg">Kilo + tekrar</option><option value="reps">Sadece tekrar</option><option value="sec">Süre (sn)</option></select></label>
+        <button class="save" id="cSave">Özel hareketi ekle</button>
+      </div>
+      <div style="text-align:center;margin-top:12px"><button class="ghost" id="progReset">Varsayılan programa dön</button></div>
+    </div>
+    <div class="card" id="backupCard">
+      <h3>Yedekleme</h3>
+      <div class="meta" id="backupInfo"></div>
+      <div class="brow"><button class="save" id="bExport">Yedeği kaydet</button></div>
+      <div class="brow"><button class="ghost wide" id="bImport">Yedekten geri yükle</button><input type="file" id="bFile" accept="application/json,.json" hidden></div>
+      <div class="status" id="bStatus"></div>
+    </div>
+    <div class="card rules">
+      <h3>Ağrı kuralı</h3>
+      <p>Egzersiz sırasında bel ağrısı en fazla 3/10. Ertesi gün başlangıçtan kötü olmamalı. Aşarsan o hareketi bir kademe geri al.</p>
+      <h3>İlerleme</h3>
+      <p>İlk 2 hafta setleri 2–3 tekrar yedek bırakarak bitir. Tüm setlerde tekrar aralığının üstüne çıkınca ağırlığı artır.</p>
+      <h3>Şimdilik yok</h3>
+      <p>Ağır back squat, yerden konvansiyonel deadlift, sit-up/crunch, good morning. Sabah kalktıktan sonraki ilk saat yüklü fleksiyon yok.</p>
+      <h3>RDL</h3>
+      <p>3. haftadan itibaren, hafif ağırlık, nötral omurga. 6–8 hafta sorunsuz geçerse ağır menteşe hareketlerine kontrollü geçiş.</p>
+      <h3>Dışarıda</h3>
+      <p>Günde 7–10 bin adım. Protein günde 120–150 g civarı.</p>
+    </div>
+  </section>
+</div>
+
+
+<div class="sheet-bg" id="sheetBg"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="grab"></div>
+  <div class="row"><h3 id="sheetTitle"></h3><button class="ghost" id="sheetClose">Kapat</button></div>
+  <div class="anim" id="animBox"></div>
+  <ol id="cueList"></ol>
+  <div class="row"><span class="meta" id="animNote">Açık renkli uzuvlar gövdenin uzak tarafı.</span><button class="ghost" id="animToggle">Durdur</button></div>
+</div>
+
+<div class="sheet" id="resSheet" role="dialog" aria-modal="true" aria-labelledby="resTitle">
+  <div class="grab"></div>
+  <div class="row"><h3 id="resTitle">Antrenman puanı</h3><button class="ghost" id="resClose">Kapat</button></div>
+  <div id="resBody"></div>
+</div>
+<div class="timer" id="timer" role="timer" aria-live="polite">
+  <div class="bar" id="tbar"></div>
+  <span>Dinlenme</span>
+  <span class="num" id="tnum">1:30</span>
+  <button id="tplus">+15 sn</button>
+  <button id="tskip">Bitir</button>
+</div>
+
+<script>
+let PROGRAM = {
+  A: [
+    {id:"bench", name:"Bench press (bar)", sets:4, target:"6–8", kind:"kg", rest:120, inc:2.5},
+    {id:"row1", name:"Tek kol dambıl row", sets:3, target:"10/taraf", kind:"kg", rest:75},
+    {id:"rdfly", name:"Bent-over lateral raise (oturarak)", sets:3, target:"12–15", kind:"kg", rest:60},
+    {id:"lat", name:"Lateral raise", sets:3, target:"12–15", kind:"kg", rest:60},
+    {id:"curl", name:"Biceps curl", sets:3, target:"10–12", kind:"kg", rest:60},
+    {id:"tri", name:"Triceps extension", sets:3, target:"10–12", kind:"kg", rest:60}
+  ],
+  B: [
+    {id:"goblet", name:"Goblet squat", sets:3, target:"10", kind:"kg", rest:90},
+    {id:"bss", name:"Bulgarian split squat", sets:3, target:"8/taraf", kind:"kg", rest:75},
+    {id:"hipt", name:"Hip thrust (bar)", sets:4, target:"10", kind:"kg", rest:90, inc:5},
+    {id:"rdl", name:"Dambıl RDL", sets:3, target:"10", kind:"kg", rest:90, fromWeek:3},
+    {id:"deadbug", name:"Dead bug", sets:3, target:"8/taraf", kind:"reps", rest:45},
+    {id:"splank", name:"Yan plank", sets:3, target:"20–30 sn/taraf", kind:"sec", rest:45}
+  ]
+};
+const WARMUP = [
+  {t:"Modifiye curl-up", d:"Bir diz bükülü, eller bel altında. 6-4-2 tekrar, her biri 10 sn tut."},
+  {t:"Yan plank", d:"Dizlerden veya ayaklardan. 6-4-2, her biri 10 sn."},
+  {t:"Bird dog", d:"Karşı kol + bacak, bel sabit. 6-4-2 / taraf, her biri 10 sn."}
+];
+const PELVIC = [
+  {t:"Nefes koordinasyonu · 1×10", d:"Alırken pelvik taban gevşer, verirken hafifçe yukarı-içeri çekilir."},
+  {t:"Uzun kasılma · 3×10", d:"5 sn sık, 5 sn tamamen bırak. Nefesi tutma."},
+  {t:"Hızlı kasılma · 2×10", d:"1 sn sık, bırak, seri şekilde."}
+];
+const RETIRED = [
+  {id:"ohp", name:"Oturarak dambıl omuz press", kind:"kg"},
+  {id:"incrow", name:"Incline bench'e yüzüstü row", kind:"kg"}
+];
+const DEFAULT_PROGRAM = JSON.parse(JSON.stringify(PROGRAM));
+const LIBRARY = [
+  {id:"bench", name:"Bench press (bar)", sets:4, target:"6–8", kind:"kg", rest:120, inc:2.5},
+  {id:"row1", name:"Tek kol dambıl row", sets:3, target:"10/taraf", kind:"kg", rest:75},
+  {id:"rdfly", name:"Bent-over lateral raise (oturarak)", sets:3, target:"12–15", kind:"kg", rest:60},
+  {id:"lat", name:"Lateral raise", sets:3, target:"12–15", kind:"kg", rest:60},
+  {id:"curl", name:"Biceps curl", sets:3, target:"10–12", kind:"kg", rest:60},
+  {id:"tri", name:"Triceps extension", sets:3, target:"10–12", kind:"kg", rest:60},
+  {id:"ohp", name:"Oturarak dambıl omuz press", sets:3, target:"8–10", kind:"kg", rest:90},
+  {id:"incrow", name:"Incline bench'e yüzüstü row", sets:3, target:"10–12", kind:"kg", rest:75},
+  {id:"goblet", name:"Goblet squat", sets:3, target:"10", kind:"kg", rest:90},
+  {id:"bss", name:"Bulgarian split squat", sets:3, target:"8/taraf", kind:"kg", rest:75},
+  {id:"hipt", name:"Hip thrust (bar)", sets:4, target:"10", kind:"kg", rest:90, inc:5},
+  {id:"rdl", name:"Dambıl RDL", sets:3, target:"10", kind:"kg", rest:90},
+  {id:"deadbug", name:"Dead bug", sets:3, target:"8/taraf", kind:"reps", rest:45},
+  {id:"splank", name:"Yan plank", sets:3, target:"20–30 sn/taraf", kind:"sec", rest:45},
+  {id:"curlup", name:"Modifiye curl-up", sets:3, target:"6-4-2", kind:"reps", rest:30},
+  {id:"birddog", name:"Bird dog", sets:3, target:"6-4-2/taraf", kind:"reps", rest:30}
+];
+const LS_PROG="ev-antrenman-program", LS_CUSTOM="ev-antrenman-custom";
+let CUSTOM=[];
+function allEx(){ return [...PROGRAM.A, ...PROGRAM.B, ...CUSTOM, ...LIBRARY, ...RETIRED]; }
+const exById = id => allEx().find(e => e.id === id);
+
+let db = null, sessions = [], day = "A", draft = null;
+const LS_SESS = "ev-antrenman-sessions", LS_DRAFT = "ev-antrenman-draft";
+
+/* ---------- yerel depolama: IndexedDB (+ localStorage yedek) ---------- */
+const STORE={}; let idb=null;
+function idbOpen(){ return new Promise(res=>{ try{ const r=indexedDB.open("ev-antrenman",1); r.onupgradeneeded=()=>r.result.createObjectStore("kv"); r.onsuccess=()=>res(r.result); r.onerror=()=>res(null); }catch(e){ res(null); } }); }
+function idbAll(){ return new Promise(res=>{ if(!idb) return res({}); const out={}; const tx=idb.transaction("kv","readonly"), st=tx.objectStore("kv"); const c=st.openCursor();
+  c.onsuccess=()=>{ const cur=c.result; if(cur){ out[cur.key]=cur.value; cur.continue(); } else res(out); }; c.onerror=()=>res(out); }); }
+function idbPut(k,v){ if(!idb) return; try{ const tx=idb.transaction("kv","readwrite"); if(v===undefined) tx.objectStore("kv").delete(k); else tx.objectStore("kv").put(v,k); }catch(e){} }
+async function loadStore(){
+  idb=await idbOpen();
+  Object.assign(STORE, await idbAll());
+  // localStorage'da olup IDB'de olmayanları taşı
+  try{ for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(k.startsWith("ev-antrenman") && STORE[k]===undefined){ STORE[k]=JSON.parse(localStorage.getItem(k)); idbPut(k,STORE[k]); } } }catch(e){}
+  try{ if(navigator.storage&&navigator.storage.persist) navigator.storage.persist(); }catch(e){}
+}
+function lsGet(k){ return STORE[k]!==undefined ? JSON.parse(JSON.stringify(STORE[k])) : null; }
+function lsSet(k,v){ STORE[k]=JSON.parse(JSON.stringify(v)); idbPut(k,STORE[k]); try{localStorage.setItem(k,JSON.stringify(v))}catch(e){} }
+function lsDel(k){ delete STORE[k]; idbPut(k,undefined); try{localStorage.removeItem(k)}catch(e){} }
+
+function fmtDate(iso){const d=new Date(iso);return d.toLocaleDateString("tr-TR",{day:"numeric",month:"short",weekday:"short"})}
+function weekNo(){
+  if(!sessions.length) return 1;
+  const first = Math.min(...sessions.map(s=>new Date(s.date).getTime()));
+  return Math.floor((Date.now()-first)/(7*864e5))+1;
+}
+function lastFor(exId){
+  for(const s of sessions){ const e = s.exercises && s.exercises.find(x=>x.id===exId); if(e && e.sets.some(t=>t.done)) return {date:s.date, sets:e.sets.filter(t=>t.done)}; }
+  return null;
+}
+function lastSessionFor(exId){
+  for(const s of sessions){ const e = s.exercises && s.exercises.find(x=>x.id===exId); if(e && e.sets.some(t=>t.done)) return {s, sets:e.sets.filter(t=>t.done)}; }
+  return null;
+}
+function range(t){ const n=(String(t).match(/\d+/g)||[]).map(Number); return {lo:n[0]||0, hi:n[1]||n[0]||0}; }
+function suggest(ex){
+  const L0 = lastSessionFor(ex.id); if(!L0) return null;
+  const {lo,hi} = range(ex.target), done=L0.sets;
+  const allTop = done.length>=ex.sets && done.every(x=>(+x.reps||0)>=hi);
+  if(!allTop) return null;
+  const painFlag = (L0.s.pain||0)>3 || L0.s.nextTrend==="worse";
+  if(painFlag) return {type:"hold", msg:"Son seansta bel tepki verdi. Ağırlığı artırma, aynı yükte kal."};
+  if(ex.kind==="kg"){ const inc=ex.inc||2, top=Math.max(...done.map(x=>+x.kg||0)); return {type:"up", kg:+(top+inc).toFixed(2), reps:lo, msg:`Tüm setlerde ${hi}+ tekrar yaptın. Bugün +${inc} kg dene (${+(top+inc).toFixed(2)} kg), ${lo} tekrardan başla.`}; }
+  if(ex.kind==="sec") return {type:"up", reps:hi+5, msg:`Tüm setlerde ${hi} sn tuttun. Bugün +5 sn dene.`};
+  return {type:"up", reps:hi+2, msg:`Tüm setlerde ${hi} tekrar yaptın. +2 tekrar ya da daha yavaş tempo dene.`};
+}
+function dayKey(d){ const x=new Date(d); return x.getFullYear()+"-"+(x.getMonth()+1)+"-"+x.getDate(); }
+function weekStart(d){ const x=new Date(d); x.setHours(0,0,0,0); const wd=(x.getDay()+6)%7; x.setDate(x.getDate()-wd); return x; }
+function thisWeekCount(){ const ws=weekStart(new Date()).getTime(); return sessions.filter(s=>new Date(s.date).getTime()>=ws).length; }
+function pendingCheckin(){
+  const s=sessions[0]; if(!s||s.nextPain!==undefined||!s._id) return null;
+  const age=Date.now()-new Date(s.date).getTime();
+  if(dayKey(s.date)===dayKey(new Date())||age>4*864e5) return null;
+  return s;
+}
+function suggestedDay(){ return sessions.length ? (sessions[0].day==="A"?"B":"A") : "A"; }
+
+function newDraft(d){
+  return {
+    day:d, fresh:true, warm:WARMUP.map(()=>false), pelvic:PELVIC.map(()=>false), pain:0, note:"",
+    exercises: PROGRAM[d].map(ex=>{
+      const last = lastFor(ex.id), sg = suggest(ex);
+      return {id:ex.id, sets:Array.from({length:ex.sets},(_,i)=>{
+        const p = last && (last.sets[i]||last.sets[last.sets.length-1]);
+        if(sg && sg.type==="up") return {kg: sg.kg!==undefined?sg.kg:(p?p.kg:""), reps: sg.reps, done:false};
+        return {kg:p?p.kg:"", reps:p?p.reps:"", done:false};
+      })};
+    })
+  };
+}
+function saveDraft(){ lsSet(LS_DRAFT, draft); }
+function touch(){ if(draft){ draft.fresh=false; if(!draft.startedAt){ draft.startedAt=new Date().toISOString(); saveDraft(); startClock(); } } }
+
+function setDay(d, keepDraft){
+  day = d;
+  document.body.classList.toggle("dayB", d==="B");
+  document.querySelectorAll(".plate").forEach(p=>p.setAttribute("aria-pressed", String(p.dataset.day===d)));
+  if(!keepDraft || !draft || draft.day!==d){ draft = newDraft(d); saveDraft(); }
+  renderSession();
+}
+
+function checklistHTML(items, key){
+  return `<ul class="checklist">${items.map((it,i)=>`<li><button aria-pressed="${draft[key][i]}" data-list="${key}" data-i="${i}" aria-label="${it.t}">✓</button><div><div class="t">${it.t}</div><div class="d">${it.d}</div></div>${key==="warm"?`<button class="howmini" data-how="${WARM_IDS[i]}" data-title="${it.t}">İzle</button>`:""}</li>`).join("")}</ul>`;
+}
+
+function reconcileDraft(){
+  if(!draft || draft.day!==day) return;
+  const want=PROGRAM[day].map(e=>e.id), have=draft.exercises.map(e=>e.id);
+  if(want.join()===have.join() && draft.exercises.every((e,i)=>e.sets.length===PROGRAM[day][i].sets)) return;
+  const fresh=newDraft(day);
+  draft.exercises = PROGRAM[day].map((ex,i)=>{
+    const old=draft.exercises.find(e=>e.id===ex.id); if(!old) return fresh.exercises[i];
+    const sets=old.sets.slice(0,ex.sets); while(sets.length<ex.sets) sets.push({...(sets[sets.length-1]||{kg:"",reps:""}), done:false});
+    return {id:ex.id, sets};
+  });
+  saveDraft();
+}
+function renderSession(){
+  reconcileDraft();
+  const wk = weekNo();
+  document.getElementById("weekInfo").textContent = `${wk}. hafta · bu hafta ${thisWeekCount()}/3 antrenman`;
+  const sug = suggestedDay();
+  document.getElementById("nextHint").textContent = sessions.length ? `Sıradaki: ${sug} günü` : "İlk antrenman: A günüyle başla";
+  let h = "";
+  const ck = pendingCheckin();
+  if(ck) h += `<div class="card checkin"><h3>Bu sabah belin nasıl?</h3><div class="meta">${fmtDate(ck.date)} tarihli ${ck.day} gününden sonra. Antrenman sırasında ${ck.pain}/10 girmiştin.</div>
+    <div class="pain"><input type="range" min="0" max="10" step="1" id="cpain" value="${ck.pain||0}" aria-label="Bu sabahki ağrı 0-10"><span class="num" id="cpainNum">${ck.pain||0}</span></div>
+    <div class="meta" style="margin-top:6px">Antrenman öncesindeki haline göre:</div>
+    <div class="trend"><button data-trend="better">Daha iyi</button><button data-trend="same">Aynı</button><button data-trend="worse">Daha kötü</button></div></div>`;
+  h += `<div class="card"><h3>Isınma: McGill Big 3</h3><div class="meta">8–10 dk, her seans</div>${checklistHTML(WARMUP,"warm")}</div>`;
+  PROGRAM[day].forEach((ex,ei)=>{
+    const st = draft.exercises[ei];
+    const last = lastFor(ex.id);
+    const early = ex.fromWeek && wk < ex.fromWeek;
+    const sg = suggest(ex);
+    const unit = ex.kind==="sec" ? "sn" : "tk";
+    h += `<div class="card ex"><div class="exhead"><div><h3>${ex.name}${early?`<span class="flag">${ex.fromWeek}. haftadan sonra</span>`:""}</h3>
+      <div class="meta">${ex.sets} set × ${ex.target}</div></div>${MOVES[ex.id]?`<button class="howbtn" data-how="${ex.id}" data-title="${ex.name}">Nasıl yapılır</button>`:""}</div>
+      ${sg?`<div class="sugg ${sg.type}">${sg.type==="up"?"↑ ":"• "}${sg.msg}</div>`:""}
+      ${last?`<div class="last">Geçen sefer: ${last.sets.map(s=>ex.kind==="kg"?`${s.kg||0}×${s.reps||0}`:`${s.reps||0}${ex.kind==="sec"?" sn":""}`).join(", ")}</div>`:""}
+      <div class="sets">${st.sets.map((s,si)=>`
+        <div class="set ${ex.kind==="kg"?"":"nokg"}">
+          <span class="n">${si+1}</span>
+          ${ex.kind==="kg"?`<label class="field"><input inputmode="decimal" aria-label="Set ${si+1} kilo" data-e="${ei}" data-s="${si}" data-f="kg" value="${s.kg}"><span>kg</span></label>`:""}
+          <label class="field"><input inputmode="numeric" aria-label="Set ${si+1} ${unit}" data-e="${ei}" data-s="${si}" data-f="reps" value="${s.reps}"><span>${unit}</span></label>
+          <button class="chk" aria-pressed="${s.done}" aria-label="Set ${si+1} tamam" data-e="${ei}" data-s="${si}">✓</button>
+        </div>`).join("")}</div>${st.sets.length>1?`<button class="eqbtn" data-eq="${ei}">1. seti tüm setlere uygula</button>`:""}</div>`;
+  });
+  if(day==="B"){
+    h += `<div class="card"><h3>Pelvik taban</h3><div class="meta">Sırtüstü, dizler bükülü. Kalça, karın ve iç bacak gevşek.</div>${checklistHTML(PELVIC,"pelvic")}
+      <details><summary>Kası nasıl bulurum?</summary><p>İdrar akışını bir anlığına durduran ya da gaz tutan kas. Sadece bulmak için bir iki kez dene, egzersizi tuvalette yapma. Doğru kasınca testisler hafifçe yukarı çekilir.</p><p>Gevşeme fazı kasılma kadar önemli. Gün boyu sıkma.</p></details></div>`;
+  }
+  h += `<div class="card"><h3>Bel ağrısı</h3><div class="meta">Antrenman sırasındaki en yüksek değer</div>
+    <div class="pain"><input type="range" min="0" max="10" step="1" id="pain" value="${draft.pain}" aria-label="Ağrı 0-10"><span class="num" id="painNum">${draft.pain}</span></div>
+    <div class="warn" id="painWarn" ${draft.pain>3?"":"hidden"}>3'ün üstü: ağrıyı artıran hareketi bir sonraki seansta geri al.</div>
+    <textarea id="note" placeholder="Not (isteğe bağlı): nasıl hissettirdi, ne değişti">${draft.note||""}</textarea></div>
+    <button class="save" id="saveBtn">Antrenmanı kaydet</button>
+    <div style="text-align:center;margin-top:10px"><button class="ghost" id="resetBtn">Bu günü sıfırla</button></div>
+    <div class="status" id="status"></div>`;
+  document.getElementById("session").innerHTML = h;
+}
+
+/* events on session */
+document.getElementById("session").addEventListener("input", e=>{
+  const t = e.target;
+  if(t.dataset.f){ touch(); const ss=draft.exercises[+t.dataset.e].sets[+t.dataset.s]; ss.edited=true; ss[t.dataset.f] = t.value.replace(",","."); saveDraft(); }
+  else if(t.id==="pain"){ draft.pain = +t.value; document.getElementById("painNum").textContent=t.value; document.getElementById("painWarn").hidden = draft.pain<=3; saveDraft(); }
+  else if(t.id==="cpain"){ document.getElementById("cpainNum").textContent=t.value; }
+  else if(t.id==="note"){ draft.note = t.value; saveDraft(); }
+});
+document.getElementById("session").addEventListener("click", e=>{
+  const b = e.target.closest("button"); if(!b) return;
+  if(b.dataset.how){ openHow(b.dataset.how, b.dataset.title); return; }
+  if(b.dataset.eq!==undefined){ touch(); const sets=draft.exercises[+b.dataset.eq].sets, f=sets[0];
+    sets.forEach((x,i)=>{ if(i&&!x.done){ x.kg=f.kg; x.reps=f.reps; x.edited=true; } }); saveDraft(); renderSession(); return; }
+  if(b.dataset.trend){ saveCheckin(b.dataset.trend); return; }
+  if(b.classList.contains("chk")){ touch();
+    const s = draft.exercises[+b.dataset.e].sets[+b.dataset.s];
+    const ei=+b.dataset.e, si=+b.dataset.s, sets=draft.exercises[ei].sets;
+    if(!s.done && si>0 && s.kg==="" && s.reps===""){ s.kg=sets[si-1].kg; s.reps=sets[si-1].reps; }
+    s.done = !s.done; b.setAttribute("aria-pressed", String(s.done));
+    if(s.done && sets[si+1] && !sets[si+1].done && !sets[si+1].edited){ sets[si+1].kg=s.kg; sets[si+1].reps=s.reps;
+      const row=b.closest(".set").nextElementSibling; if(row){ row.querySelectorAll("input").forEach(inp=>{ inp.value = sets[si+1][inp.dataset.f]; }); } }
+    saveDraft();
+    if(s.done) startTimer(PROGRAM[day][+b.dataset.e].rest);
+  } else if(b.dataset.list){ touch();
+    const arr = draft[b.dataset.list]; arr[+b.dataset.i] = !arr[+b.dataset.i]; b.setAttribute("aria-pressed", String(arr[+b.dataset.i])); saveDraft();
+  } else if(b.id==="saveBtn"){ saveSession(); }
+  else if(b.id==="resetBtn"){ if(confirm("Bu günün girdileri silinsin mi?")){ draft = newDraft(day); saveDraft(); renderSession(); } }
+});
+document.querySelectorAll(".plate").forEach(p=>p.addEventListener("click",()=>setDay(p.dataset.day)));
+
+/* timer */
+let tEnd=0, tTotal=0, tInt=null;
+function startTimer(sec){ tTotal=sec; tEnd=Date.now()+sec*1000; document.getElementById("timer").classList.add("on"); clearInterval(tInt); tick(); tInt=setInterval(tick,250); }
+function tick(){
+  const left = Math.max(0, Math.round((tEnd-Date.now())/1000));
+  document.getElementById("tnum").textContent = `${Math.floor(left/60)}:${String(left%60).padStart(2,"0")}`;
+  document.getElementById("tbar").style.width = (tTotal? (1-left/tTotal)*100 : 100)+"%";
+  if(left<=0){ clearInterval(tInt); try{navigator.vibrate&&navigator.vibrate([200,100,200])}catch(e){} setTimeout(stopTimer,1500); }
+}
+function stopTimer(){ clearInterval(tInt); document.getElementById("timer").classList.remove("on"); }
+document.getElementById("tplus").onclick=()=>{ tEnd+=15000; tTotal+=15; tick(); };
+document.getElementById("tskip").onclick=stopTimer;
+
+/* save */
+async function saveSession(){
+  const btn = document.getElementById("saveBtn"), st = document.getElementById("status");
+  const doneSets = draft.exercises.reduce((n,e)=>n+e.sets.filter(s=>s.done).length,0);
+  if(!doneSets){ st.textContent = "Kaydetmek için en az bir seti ✓ ile işaretle."; return; }
+  btn.disabled = true; st.textContent = "Kaydediliyor…";
+  const rec = { date:new Date().toISOString(), day:draft.day, pain:draft.pain, note:draft.note||"",
+    warm:draft.warm.filter(Boolean).length, pelvic:draft.day==="B"?draft.pelvic.filter(Boolean).length:null,
+    exercises: draft.exercises.map(e=>({id:e.id, sets:e.sets.map(s=>({kg:parseFloat(s.kg)||0, reps:parseFloat(s.reps)||0, done:!!s.done}))})) };
+  rec.minutes = draft.startedAt ? Math.max(1, Math.round((Date.now()-new Date(draft.startedAt).getTime())/60000)) : null;
+  const bodyKg = (measures.find(m=>m.kg)||{}).kg || 74.5;
+  rec.score = scoreSession(rec, sessions, bodyKg);
+  const id = "s"+Date.now();
+  let ok = false;
+  if(db){
+    try{ await db.doc("sessions/"+id).set(rec); ok = true; }
+    catch(err){ if(err && err.code==="unavailable"){ try{ await new Promise(r=>setTimeout(r,600+Math.random()*600)); await db.doc("sessions/"+id).set(rec); ok=true; }catch(e){} } }
+  }
+  if(!db){ const loc = lsGet(LS_SESS)||[]; loc.unshift({...rec,_id:id}); lsSet(LS_SESS,loc); sessions = loc; ok = true; }
+  btn.disabled = false;
+  if(ok){
+    lsDel(LS_DRAFT); stopTimer(); backupInfo();
+    if(!db) afterData();
+    const next = draft.day==="A"?"B":"A";
+    setDay(next);
+    window.scrollTo({top:0});
+    document.getElementById("status").textContent = "";
+    document.getElementById("nextHint").textContent = `Kaydedildi. Sıradaki: ${next} günü`;
+    showResult(rec);
+  } else {
+    st.textContent = "Kaydedilemedi. Bağlantını kontrol edip tekrar dene; girdiler bu cihazda duruyor.";
+  }
+}
+
+
+/* ---------- antrenman puanı ---------- */
+const e1rm=(kg,r)=>kg*(1+r/30);
+function bestOf(sets,kind){ const d=sets.filter(x=>x.done); if(!d.length) return null; return kind==="kg"?Math.max(...d.map(x=>e1rm(+x.kg||0,+x.reps||0))):Math.max(...d.map(x=>+x.reps||0)); }
+function tonnage(exs){ return exs.reduce((t,e)=>{ const ex=exById(e.id); if(!ex||ex.kind!=="kg") return t; return t+e.sets.filter(x=>x.done).reduce((a,x)=>a+(+x.kg||0)*(+x.reps||0),0); },0); }
+function scoreSession(rec, prior, bodyKg){
+  const P={};
+  // 1) plan tamamlama (30)
+  let planned=0, done=0; rec.exercises.forEach(e=>{ const ex=exById(e.id); planned+=ex?ex.sets:e.sets.length; done+=e.sets.filter(x=>x.done).length; });
+  P.plan={pts:30*Math.min(1,done/Math.max(1,planned)), max:30, label:"Plan tamamlama", info:`${done}/${planned} set`};
+  // 2) bel ağrısı (20)
+  const pn=rec.pain||0, pp=pn<=2?20:pn===3?15:pn===4?8:0;
+  P.pain={pts:pp, max:20, label:"Bel ağrısı", info:`${pn}/10`};
+  // 3) ilerleme (15): her hareket kendi geçmişiyle kıyaslanır
+  let n=0, sum=0;
+  rec.exercises.forEach(e=>{ const ex=exById(e.id); if(!ex) return; const now=bestOf(e.sets,ex.kind); if(now===null) return;
+    const prevS=prior.find(s=>(s.exercises||[]).some(x=>x.id===e.id&&x.sets.some(y=>y.done))); if(!prevS) return;
+    const prev=bestOf(prevS.exercises.find(x=>x.id===e.id).sets,ex.kind); if(!prev) return;
+    n++; sum+= now>=prev*0.98 ? 1 : Math.max(0, now/prev); });
+  P.prog={pts:15*(n?sum/n:1), max:15, label:"İlerleme", info:n?`${n} hareket geçen seansla kıyaslandı`:"ilk kayıt, tam puan"};
+  // 4) hacim (10): aynı günün son 3 seansının ortalamasına göre
+  const ton=tonnage(rec.exercises), same=prior.filter(s=>s.day===rec.day).slice(0,3).map(s=>tonnage(s.exercises||[])).filter(v=>v>0);
+  const avg=same.length?same.reduce((a,b)=>a+b,0)/same.length:0, ratio=avg?ton/avg:1;
+  P.vol={pts:10*Math.min(1,ratio/0.9), max:10, label:"Hacim", info:avg?`son ${same.length} ${rec.day} gününün %${Math.round(ratio*100)}'i`:"karşılaştırma yok, tam puan"};
+  // 5) süre (10): 35–80 dk ideal
+  const m=rec.minutes; let tp=1; if(m!=null){ if(m<35) tp=m/35; else if(m>80) tp=Math.max(0,1-(m-80)/60); }
+  P.time={pts:10*tp, max:10, label:"Süre", info:m!=null?`${m} dk (ideal 35–80)`:"ölçülmedi"};
+  // 6) ısınma + pelvik taban (15)
+  const wr=(rec.warm||0)/3, pv=rec.day==="B"?(rec.pelvic||0)/3:null;
+  P.prep={pts: pv===null?15*wr:10*wr+5*pv, max:15, label:rec.day==="B"?"Isınma + pelvik taban":"Isınma", info:`${rec.warm||0}/3${pv!==null?` · pelvik ${rec.pelvic||0}/3`:""}`};
+  const total=Math.round(Object.values(P).reduce((a,p)=>a+p.pts,0));
+  const kcal = m!=null&&bodyKg ? Math.round(4.5*3.5*bodyKg/200*m) : null;
+  return {total, parts:Object.fromEntries(Object.entries(P).map(([k,v])=>[k,{pts:Math.round(v.pts*10)/10,max:v.max,label:v.label,info:v.info}])), tonnage:Math.round(ton), minutes:m, kcal};
+}
+function finalScore(s){ if(!s.score) return null; return Math.max(0, s.score.total - (s.nextTrend==="worse"?15:0)); }
+function scoreColor(v){ return v>=85?"var(--ok)":v>=65?"var(--gold)":"var(--b)"; }
+function showResult(rec){
+  const sc=rec.score, box=document.getElementById("resBody");
+  box.innerHTML=`<div class="ring" style="--v:${sc.total};--c:${scoreColor(sc.total)}"><div><div class="num">${sc.total}<small>%</small></div><div class="meta">${rec.day} günü</div></div></div>
+    <div class="stats"><div class="stat"><div class="num">${sc.minutes??"–"}<small>dk</small></div><div class="lb">Süre</div></div>
+    <div class="stat"><div class="num">${sc.tonnage.toLocaleString("tr-TR")}<small>kg</small></div><div class="lb">Toplam hacim</div></div>
+    <div class="stat"><div class="num">${sc.kcal?"~"+sc.kcal:"–"}<small>kcal</small></div><div class="lb">Tahmini enerji</div></div>
+    <div class="stat"><div class="num">${rec.pain}<small>/10</small></div><div class="lb">Bel ağrısı</div></div></div>
+    <div class="parts" style="--pc:${rec.day==="A"?"var(--a)":"var(--b)"}">${Object.values(sc.parts).map(p=>`<div class="part"><div class="pt"><span>${p.label}</span><b>${p.pts}/${p.max}</b></div><div class="bar"><i style="width:${p.pts/p.max*100}%"></i></div><div class="meta">${p.info}</div></div>`).join("")}</div>
+    <p class="meta">Ertesi sabah belin kötüleşirse puandan 15 düşülür. Kalori, vücut ağırlığı ve süreden kabaca tahmin edilir, puana dahil değildir.</p>`;
+  document.getElementById("resSheet").classList.add("on"); document.getElementById("sheetBg").classList.add("on");
+}
+function closeRes(){ document.getElementById("resSheet").classList.remove("on"); document.getElementById("sheetBg").classList.remove("on"); }
+let clockInt=null;
+function startClock(){ clearInterval(clockInt); clockInt=setInterval(()=>{ const el=document.getElementById("clock"); if(!el) return; if(!draft||!draft.startedAt){ el.textContent=""; return; }
+  const m=Math.floor((Date.now()-new Date(draft.startedAt).getTime())/60000); el.textContent=`⏱ ${m} dk`; },1000); }
+
+/* ertesi gün kontrolü */
+async function saveCheckin(trend){
+  const s=pendingCheckin(); if(!s) return;
+  const val=+document.getElementById("cpain").value, upd={nextPain:val, nextTrend:trend, nextAt:new Date().toISOString()};
+  document.querySelectorAll(".trend button").forEach(x=>x.disabled=true);
+  if(db){ try{ await db.doc("sessions/"+s._id).update(upd); }catch(e){ document.querySelectorAll(".trend button").forEach(x=>x.disabled=false); alert("Kaydedilemedi, tekrar dene."); return; } }
+  else { Object.assign(s,upd); lsSet(LS_SESS,sessions); }
+  Object.assign(s,upd);
+  if(trend==="worse") alert("Kötüleşme kaydedildi. Bugünkü antrenmanda ağırlıkları artırma; ağrıyı artıran hareketi bir kademe geri al.");
+  if(draft && draft.fresh){ draft=newDraft(day); saveDraft(); }
+  renderSession();
+}
+
+/* süreklilik + ağrı analizi */
+function renderStreak(){
+  const now=new Date(), ws=weekStart(now), weeks=[];
+  for(let i=7;i>=0;i--){ const st=new Date(ws); st.setDate(st.getDate()-7*i); weeks.push(st); }
+  const byDay={}; sessions.forEach(s=>{ (byDay[dayKey(s.date)]=byDay[dayKey(s.date)]||[]).push(s.day); });
+  let streak=0;
+  for(let i=weeks.length-1;i>=0;i--){ const a=weeks[i].getTime(), b=a+7*864e5; const n=sessions.filter(s=>{const t=new Date(s.date).getTime();return t>=a&&t<b}).length;
+    if(i===weeks.length-1 && n<3) continue; if(n>=3) streak++; else break; }
+  const days=["Pt","Sa","Ça","Pe","Cu","Ct","Pz"];
+  let g=`<div class="cal"><div></div>${days.map(d=>`<div class="ch">${d}</div>`).join("")}`;
+  weeks.forEach(w=>{ const a=w.getTime(), n=sessions.filter(s=>{const t=new Date(s.date).getTime();return t>=a&&t<a+7*864e5}).length;
+    g+=`<div class="cw ${n>=3?"met":""}">${n}/3</div>`;
+    for(let d=0;d<7;d++){ const x=new Date(w); x.setDate(x.getDate()+d); const k=dayKey(x), ds=byDay[k]||[], future=x>now, today=k===dayKey(now);
+      g+=`<div class="cc ${ds.length?ds[0]:""} ${future?"fut":""} ${today?"today":""}" title="${x.toLocaleDateString("tr-TR")}">${ds.length?ds[0]:""}</div>`; } });
+  g+="</div>";
+  document.getElementById("streak").innerHTML = `<div class="stats"><div class="stat"><div class="num">${thisWeekCount()}<small>/3</small></div><div class="lb">Bu hafta</div></div><div class="stat"><div class="num">${streak}<small>hafta</small></div><div class="lb">Üst üste hedef tutturma</div></div></div>${g}`;
+}
+function renderPain(){
+  const list=sessions.slice().reverse();
+  const el=document.getElementById("painChart"), an=document.getElementById("painAnalysis");
+  if(list.length<2){ el.innerHTML=`<div class="empty">Grafik için en az iki antrenman lazım.</div>`; an.innerHTML=""; return; }
+  const W=520,H=190,P=30, x=i=>P+(i*(W-P*2)/(list.length-1)), y=v=>H-P-(v/10)*(H-P*2);
+  const line=(key)=>{ const pts=list.map((s,i)=>s[key]!==undefined?[x(i),y(s[key])]:null).filter(Boolean); return pts.length>1?pts.map((p,i)=>`${i?"L":"M"}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(" "):""; };
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Bel ağrısı grafiği">
+    <rect x="${P}" y="${y(10)}" width="${W-P*2}" height="${y(3)-y(10)}" fill="var(--b)" opacity=".07"/>
+    <line x1="${P}" y1="${y(3)}" x2="${W-P}" y2="${y(3)}" stroke="var(--b)" stroke-dasharray="4 4" opacity=".6"/>
+    <text x="${P-6}" y="${y(3)+4}" text-anchor="end" font-size="12" fill="var(--muted)">3</text>
+    <text x="${P-6}" y="${y(10)+4}" text-anchor="end" font-size="12" fill="var(--muted)">10</text>
+    <text x="${P-6}" y="${y(0)+4}" text-anchor="end" font-size="12" fill="var(--muted)">0</text>
+    <path d="${line("pain")}" fill="none" stroke="var(--ink)" stroke-width="2.5"/>
+    <path d="${line("nextPain")}" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-dasharray="6 4"/>
+    ${list.map((s,i)=>`<circle cx="${x(i)}" cy="${y(s.pain||0)}" r="5" fill="${s.day==="A"?"var(--a)":"var(--b)"}"/>${s.nextPain!==undefined?`<circle cx="${x(i)}" cy="${y(s.nextPain)}" r="4" fill="var(--surface)" stroke="var(--gold)" stroke-width="2.5"/>`:""}`).join("")}
+  </svg><div class="legend"><span><i style="background:var(--ink)"></i>Antrenman sırasında</span><span><i style="background:var(--gold)"></i>Ertesi sabah</span><span><i style="background:var(--a)"></i>A</span><span><i style="background:var(--b)"></i>B</span></div>`;
+  const rated=sessions.filter(s=>s.nextTrend);
+  if(rated.length<4){ an.innerHTML=`<p class="meta">Ertesi gün kaydı ${rated.length}/4. Dört kayıttan sonra hangi günün belini daha çok zorladığı burada görünecek.</p>`; return; }
+  const row=d=>{ const r=rated.filter(s=>s.day===d); if(!r.length) return `<div class="prow"><b>${d} günü</b><span class="meta">kayıt yok</span></div>`;
+    const avg=(r.reduce((a,s)=>a+(s.nextPain||0),0)/r.length).toFixed(1), worse=r.filter(s=>s.nextTrend==="worse").length;
+    return `<div class="prow"><b>${d} günü</b><span>ertesi sabah ort. <b>${avg}</b>/10 · ${worse}/${r.length} seansta kötüleşme</span></div>`; };
+  const worseS=rated.filter(s=>s.nextTrend==="worse").slice(0,3);
+  an.innerHTML = row("A")+row("B")+(worseS.length?`<p class="meta" style="margin-top:8px">Kötüleşen seanslarda en ağır setler: ${worseS.map(s=>`${fmtDate(s.date)} → ${(s.exercises||[]).map(e=>{const ex=exById(e.id); const d=e.sets.filter(x=>x.done&&x.kg); if(!ex||!d.length) return null; return `${ex.name} ${Math.max(...d.map(x=>x.kg))} kg`}).filter(Boolean).slice(0,3).join(", ")}`).join("; ")}</p>`:"")+
+    `<p class="meta">Aynı gündeki hareketler hep birlikte yapıldığı için tek tek ayrıştırılamaz. Bir gün sürekli kötüleşme veriyorsa o gündeki şüpheli hareketi tek başına değiştirip 2 hafta izle.</p>`;
+}
+
+/* history */
+function renderHistory(){
+  const pick = document.getElementById("exPick");
+  const cur = pick.value || "__score";
+  pick.innerHTML = `<option value="__score" ${cur==="__score"?"selected":""}>Antrenman puanı</option>` + [["A",PROGRAM.A],["B",PROGRAM.B]].map(([d,list])=>`<optgroup label="${d} günü">${list.map(e=>`<option value="${e.id}" ${e.id===cur?"selected":""}>${e.name}</option>`).join("")}</optgroup>`).join("");
+  renderChart(pick.value);
+  renderStreak(); renderPain();
+  const list = document.getElementById("histList");
+  if(!sessions.length){ list.innerHTML = `<div class="card empty">Henüz kayıt yok. İlk antrenmanı Bugün sekmesinden kaydet.</div>`; return; }
+  list.innerHTML = sessions.map(s=>`<div class="card" ${s.score?`data-res="${s._id}" style="cursor:pointer"`:""}><div class="hist-item"><div><span class="tag ${s.day}">${s.day}</span> <b>${fmtDate(s.date)}</b></div>${finalScore(s)!==null?`<span class="scb" style="background:${scoreColor(finalScore(s))}">%${finalScore(s)}</span>`:""}<div class="meta">Ağrı ${s.pain}/10${s.nextPain!==undefined?` · ertesi gün ${s.nextPain}/10${s.nextTrend==="worse"?" ↑":""}`:""}</div></div>
+    <div class="hist-ex">${(s.exercises||[]).map(e=>{const ex=exById(e.id); const d=e.sets.filter(x=>x.done); if(!ex||!d.length) return ""; const top=d.reduce((a,b)=>(b.kg>a.kg||(b.kg===a.kg&&b.reps>a.reps))?b:a); return `<div><b>${ex.name}</b>: ${ex.kind==="kg"?`${top.kg} kg × ${top.reps}`:`${top.reps}${ex.kind==="sec"?" sn":" tk"}`} · ${d.length} set</div>`}).join("")}
+    ${s.note?`<div style="margin-top:6px">${escapeHTML(s.note)}</div>`:""}</div></div>`).join("");
+}
+function escapeHTML(t){return String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function renderChart(exId){
+  if(exId==="__score"){ const pts=sessions.slice().reverse().filter(s=>finalScore(s)!==null).map(s=>({date:s.date,v:finalScore(s)})); document.getElementById("chart").innerHTML=chartSVG(pts,"%","Antrenman puanı"); return; }
+  const ex = exById(exId), el = document.getElementById("chart");
+  const pts = sessions.slice().reverse().map(s=>{const e=(s.exercises||[]).find(x=>x.id===exId); if(!e) return null; const d=e.sets.filter(x=>x.done); if(!d.length) return null;
+    const v = ex.kind==="kg" ? Math.max(...d.map(x=>x.kg)) : Math.max(...d.map(x=>x.reps)); return {date:s.date, v};}).filter(Boolean);
+  if(pts.length<2){ el.innerHTML = `<div class="empty">${pts.length?"Grafik için bir kayıt daha lazım.":"Bu hareket için henüz kayıt yok."}</div>`; return; }
+  const W=520,H=200,P=34; const vs=pts.map(p=>p.v); let mn=Math.min(...vs), mx=Math.max(...vs); if(mn===mx){mn-=1;mx+=1}
+  const x=i=>P+(i*(W-P*2)/(pts.length-1)), y=v=>H-P-((v-mn)/(mx-mn))*(H-P*2);
+  const path = pts.map((p,i)=>`${i?"L":"M"}${x(i).toFixed(1)},${y(p.v).toFixed(1)}`).join(" ");
+  const unit = ex.kind==="kg"?"kg":ex.kind==="sec"?"sn":"tk";
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${ex.name} ilerleme grafiği">
+    <line x1="${P}" y1="${H-P}" x2="${W-P}" y2="${H-P}" stroke="var(--line)"/>
+    <text x="${P-6}" y="${y(mx)+4}" text-anchor="end" font-size="12" fill="var(--muted)">${mx}</text>
+    <text x="${P-6}" y="${y(mn)+4}" text-anchor="end" font-size="12" fill="var(--muted)">${mn}</text>
+    <path d="${path}" fill="none" stroke="var(--day)" stroke-width="3" stroke-linejoin="round"/>
+    ${pts.map((p,i)=>`<circle cx="${x(i)}" cy="${y(p.v)}" r="4.5" fill="var(--surface)" stroke="var(--day)" stroke-width="2.5"/>`).join("")}
+    <text x="${P}" y="${H-10}" font-size="12" fill="var(--muted)">${fmtDate(pts[0].date)}</text>
+    <text x="${W-P}" y="${H-10}" font-size="12" fill="var(--muted)" text-anchor="end">${fmtDate(pts[pts.length-1].date)} · en iyi ${Math.max(...vs)} ${unit}</text>
+  </svg>`;
+}
+document.getElementById("histList").addEventListener("click",e=>{ const c=e.target.closest("[data-res]"); if(!c) return; const s=sessions.find(x=>x._id===c.dataset.res); if(s) showResult({...s, score:{...s.score, total:finalScore(s)}}); });
+document.getElementById("exPick").addEventListener("change",e=>renderChart(e.target.value));
+
+/* tabs */
+document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll("nav button").forEach(x=>x.setAttribute("aria-selected",String(x===b)));
+  ["today","history","body","rules"].forEach(t=>document.getElementById("tab-"+t).hidden = t!==b.dataset.tab);
+  if(b.dataset.tab==="rules"){ backupInfo(); renderProg(); }
+  if(b.dataset.tab==="history") renderHistory(); if(b.dataset.tab==="body") renderBody();
+}));
+
+function afterData(){
+  if(!document.getElementById("tab-history").hidden) renderHistory();
+  // refresh "geçen sefer" only if nothing entered yet in the current draft
+  const untouched = draft && draft.fresh;
+  if(untouched){ draft = newDraft(day); saveDraft(); }
+  renderSession();
+}
+
+
+/* ---------- hareket animasyonları ---------- */
+const L={T:36,UA:20,FA:18,TH:24,SH:24,HD:11,FT:7};
+const R=Math.PI/180, dir=a=>[Math.cos(a*R),Math.sin(a*R)];
+const add=(p,a,len)=>{const d=dir(a);return [p[0]+d[0]*len,p[1]+d[1]*len]};
+const BENCH={
+  flat:`<rect x="66" y="93" width="76" height="6" rx="2"/><path d="M76 99V124M132 99V124"/>`,
+  row:`<rect x="34" y="100" width="84" height="6" rx="2"/><path d="M44 106V124M108 106V124"/>`,
+  seat:`<rect x="70" y="104" width="32" height="5" rx="2"/><rect x="72" y="52" width="6" height="52" rx="2"/><path d="M86 109V124"/>`,
+  incline:`<path d="M52 116L112 81" stroke-width="7" stroke-linecap="round"/><path d="M100 90V124M62 112V124"/>`,
+  bss:`<rect x="40" y="104" width="40" height="5" rx="2"/><path d="M48 109V124M72 109V124"/>`,
+  hipt:`<rect x="26" y="104" width="54" height="5" rx="2"/><path d="M34 109V124M72 109V124"/>`
+};
+const MOVES={
+  bench:{scene:"flat",anchor:["hp",82,88],eq:"bar",
+    a:{t:0,h:-5,l1:150,l2:95,a1:-90,ua:-.45,a2:-90},b:{t:0,h:-5,l1:150,l2:95,a1:-90,ua:1,a2:-90},
+    cues:["Kürek kemiklerini geri-aşağı sıkıştır, ayaklar yere bassın.","Bar göğüs ucu hizasına insin, dirsekler gövdeye yaklaşık 45°.","Kalça bench'ten kalkmasın, bel hafif doğal kavisinde."]},
+  row1:{scene:"row",anchor:["hp",68,76],eq:"db",
+    a:{t:-10,h:-5,a1:90,a2:90,a1f:95,a2f:30,l1:95,l2:88,l1f:90,l2f:180},b:{t:-10,h:-5,a1:200,a2:100,a1f:95,a2f:30,l1:95,l2:88,l1f:90,l2f:180},
+    cues:["Karşı diz ve el bench'te, sırt düz ve yere paralel.","Dirseği kalçana doğru çek, gövdeyi döndürme.","Aşağıda kolu tam aç, omzu hafifçe esnet."]},
+  rdfly:{view:"front2",eq:"db",a:{a1:95,a2:92},b:{a1:0,a2:-5},
+    note:"Önden görünüm: bench kenarında oturmuş, göğüs uyluklarda.",
+    cues:["Bench kenarına otur, göğsünü uyluklarına yasla; bel desteksiz eğilmesin.","Dirsekler hafif bükük, kolları yana doğru omuz hizasına aç.","Tepede kürek kemiklerini sık, 2–3 sn'de kontrollü indir."]},
+  ohp:{scene:"seat",anchor:["hp",84,100],eq:"db",
+    a:{t:-90,h:-90,a1:45,a2:-90,l1:0,l2:90},b:{t:-90,h:-90,a1:-80,a2:-90,l1:0,l2:90},
+    cues:["Sırt desteğe yaslı, karın sıkı.","Dambıllar omuz hizasından başın üstüne, kolu tam aç.","Belini kavisleme, kaburgaları aşağıda tut."]},
+  incrow:{scene:"incline",anchor:["hp",72,100],eq:"db",
+    a:{t:-32,h:-32,a1:90,a2:90,l1:150,l2:150},b:{t:-32,h:-32,a1:200,a2:110,l1:150,l2:150},
+    cues:["Göğüs bench'e yaslı kalsın, gövdeyi kaldırma.","Dirsekleri geriye çek, tepede kürek kemiklerini sık.","Boynu nötr tut, yukarı bakma."]},
+  lat:{view:"front",eq:"db",a:{a1:95,a2:92},b:{a1:5,a2:0},
+    cues:["Dirsekler hafif bükük, omuz hizasına kadar kaldır.","Omuzları kulağa doğru kaldırma.","İnişi 2–3 saniyede kontrollü yap."]},
+  curl:{anchor:["an",100,124],eq:"db",
+    a:{t:-90,h:-90,a1:97,a2:90,l1:90,l2:90},b:{t:-90,h:-90,a1:97,a2:-60,l1:90,l2:90},
+    cues:["Dirsekler gövdenin yanında sabit.","Gövdeyle sallanma, sadece ön kol hareket eder.","İnişte kolu tam aç."]},
+  tri:{scene:"flat",anchor:["hp",82,88],eq:"db",
+    a:{t:0,h:-5,l1:150,l2:95,a1:-80,a2:-90},b:{t:0,h:-5,l1:150,l2:95,a1:-80,a2:20},
+    cues:["Üst kol sabit, sadece dirsek bükülür.","Dambılı başın yanına kontrollü indir.","Dirsekleri dışa açma."]},
+  goblet:{anchor:["an",100,124],eq:"goblet",
+    a:{t:-90,h:-90,a1:95,a2:-65,l1:90,l2:90},b:{t:-60,h:-50,a1:100,a2:-60,l1:10,l2:115},
+    cues:["Dambılı göğsüne yapıştır.","Kalça geri ve aşağı, dizler ayak ucu yönünde.","Göğüs dik, bel nötr; ağrısız derinliğe kadar in."]},
+  bss:{scene:"bss",anchor:["an",112,124],eq:"db",
+    a:{t:-85,h:-85,a1:92,a2:90,l1:56,l2:100,l1f:130,l2f:175},b:{t:-85,h:-85,a1:92,a2:90,l1:0,l2:90,l1f:100,l2f:-120},
+    cues:["Arka ayak bench'te, ön ayak yeterince önde.","Ağırlık ön topukta, gövde dik.","Arka diz yere yaklaşana kadar in."]},
+  hipt:{scene:"hipt",anchor:["an",132,124],eq:"hipbar",
+    a:{t:200,h:-150,a1:15,a2:15,l1:-35,l2:100},b:{t:180,h:-150,a1:0,a2:0,l1:0,l2:90},
+    cues:["Kürek kemikleri bench kenarında, barın altına havlu veya ped koy.","Kalçayı sıkarak yukarı it, belden kavis yapma.","Tepede gövde ve uyluk düz çizgi, 1 sn tut."]},
+  rdl:{anchor:["an",100,124],eq:"db",
+    a:{t:-90,h:-90,a1:90,a2:90,l1:90,l2:90},b:{t:-15,h:-10,a1:90,a2:90,l1:70,l2:95},
+    cues:["Dizler hafif bükük, kalçayı geriye it.","Sırt düz, dambıllar bacağa yakın insin.","Arka bacakta gerilme gelince dur, belini yuvarlatma."]},
+  deadbug:{anchor:["hp",80,116],
+    a:{t:0,h:0,a1:-90,a2:-90,a1f:-90,a2f:-90,l1:-90,l2:180,l1f:-90,l2f:180},b:{t:0,h:0,a1:-12,a2:-8,a1f:-90,a2f:-90,l1:-90,l2:180,l1f:-188,l2f:-184},
+    cues:["Bel yere bastırılı kalsın.","Karşı kol ve bacağı yavaşça uzat, bu sırada nefes ver.","Bel kalkıyorsa hareketi kısalt."]},
+  splank:{anchor:["an",40,124],
+    a:{t:-30,h:-30,a1:90,a2:90,fa:.1,a1f:-80,a2f:-85,l1:178,l2:178},b:{t:-15,h:-15,a1:90,a2:90,fa:.1,a1f:-80,a2f:-85,l1:165,l2:165},
+    note:"Önden görünüm: alttaki dirsek omzun altında, ön kol sana doğru; üstteki kol tavana.",
+    cues:["Dirsek omzun tam altında, ön kol vücuda dik.","Ayaklar üst üste, baş-kalça-ayak düz çizgi.","Kalçayı yerden kaldır ve düşürmeden tut; zorlanırsan dizlerden yap."]},
+  curlup:{anchor:["hp",80,118],
+    a:{t:0,h:0,a1:175,a2:180,l1:-120,l2:115,l1f:180,l2f:180},b:{t:-10,h:-18,a1:175,a2:180,l1:-120,l2:115,l1f:180,l2f:180},
+    cues:["Bir diz bükülü, eller bel boşluğunun altında.","Baş ve omuzları sadece birkaç cm kaldır, çeneni göğse gömme.","Bel düzlüğünü koru, 10 sn tut."]},
+  birddog:{anchor:["hp",70,100],
+    a:{t:-23,h:-23,a1:90,a2:90,a1f:90,a2f:90,l1:90,l2:180,l1f:90,l2f:180},b:{t:-23,h:-15,a1:-15,a2:-15,a1f:90,a2f:90,l1:90,l2:180,l1f:185,l2f:180},
+    cues:["Eller omuz, dizler kalça altında.","Karşı kol ve bacağı uzat, bel ve kalça sabit kalsın.","Uzattığında 10 sn tut, gövde dönmesin."]}
+};
+const WARM_IDS=["curlup","splank","birddog"];
+
+function fkSide(p){
+  const g=k=>p[k], ff=(k,d)=>p[k]!==undefined?p[k]:p[d];
+  const J={hp:[0,0]};
+  J.nk=add(J.hp,g("t"),L.T); J.hd=add(J.nk,ff("h","t"),L.HD);
+  const ua=p.ua!==undefined?p.ua:1, uaf=p.uaf!==undefined?p.uaf:ua;
+  const fa=p.fa!==undefined?p.fa:1, faf=p.faf!==undefined?p.faf:1;
+  J.el=add(J.nk,g("a1"),L.UA*ua); J.wr=add(J.el,g("a2"),L.FA*fa);
+  J.el2=add(J.nk,ff("a1f","a1"),L.UA*uaf); J.wr2=add(J.el2,ff("a2f","a2"),L.FA*faf);
+  J.kn=add(J.hp,g("l1"),L.TH); J.an=add(J.kn,g("l2"),L.SH);
+  J.kn2=add(J.hp,ff("l1f","l1"),L.TH); J.an2=add(J.kn2,ff("l2f","l2"),L.SH);
+  return J;
+}
+function lerpPose(a,b,k){const o={};for(const key of new Set([...Object.keys(a),...Object.keys(b)])){const va=a[key]!==undefined?a[key]:(["ua","uaf","fa","faf"].includes(key)?1:undefined), vb=b[key]!==undefined?b[key]:(["ua","uaf","fa","faf"].includes(key)?1:undefined); if(typeof va==="number"&&typeof vb==="number") o[key]=va+(vb-va)*k;} return o;}
+const seg=(a,b,w,c,op)=>`<line x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}" stroke="${c}" stroke-width="${w}" stroke-linecap="round" ${op?`opacity="${op}"`:""}/>`;
+const dbAt=(p,r)=>`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${r}" fill="var(--day)"/>`;
+
+function drawMove(m,k){
+  const INK="var(--ink)", FAR="var(--muted)";
+  let out=`<line x1="10" y1="124.5" x2="170" y2="124.5" stroke="var(--line)" stroke-width="2"/>`;
+  if(m.view==="front2") out+=`<g fill="var(--muted)" stroke="var(--muted)" stroke-width="3" opacity=".45"><rect x="70" y="100" width="60" height="5" rx="2"/><path d="M76 105V124M124 105V124"/></g>`;
+  if(m.scene) out+=`<g fill="var(--muted)" stroke="var(--muted)" stroke-width="3" opacity=".45">${BENCH[m.scene]}</g>`;
+  if(m.view==="front2"){
+    const p=lerpPose(m.a,m.b,k), shL=[88,80], shR=[112,80];
+    const elL=add(shL,180-p.a1,L.UA), wrL=add(elL,180-p.a2,L.FA);
+    const elR=add(shR,p.a1,L.UA), wrR=add(elR,p.a2,L.FA);
+    out+=seg([92,96],[92,124],7,INK)+seg([108,96],[108,124],7,INK);
+    out+=`<rect x="84" y="90" width="32" height="9" rx="4.5" fill="${INK}"/>`;
+    out+=`<path d="M88 74L112 74L114 86L86 86Z" fill="${INK}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>`;
+    out+=seg(shL,elL,7,INK)+seg(elL,wrL,6,INK)+seg(shR,elR,7,INK)+seg(elR,wrR,6,INK);
+    out+=dbAt(wrL,5.5)+dbAt(wrR,5.5)+`<circle cx="100" cy="88" r="8.5" fill="${INK}"/><circle cx="100" cy="88" r="8.5" fill="none" stroke="var(--bg)" stroke-width="1.5"/>`;
+    return out;
+  }
+  if(m.view==="front"){
+    const p=lerpPose(m.a,m.b,k), nk=[100,44], hd=[100,32], pv=[100,80];
+    const shL=[89,48], shR=[111,48];
+    const elL=add(shL,180-p.a1,L.UA), wrL=add(elL,180-p.a2,L.FA);
+    const elR=add(shR,p.a1,L.UA), wrR=add(elR,p.a2,L.FA);
+    out+=seg([93,80],[93,102],7,INK)+seg([93,102],[93,124],7,INK)+seg([107,80],[107,102],7,INK)+seg([107,102],[107,124],7,INK);
+    out+=`<path d="M89 48L111 48L107 82L93 82Z" fill="${INK}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>`;
+    out+=seg(shL,elL,7,INK)+seg(elL,wrL,6,INK)+seg(shR,elR,7,INK)+seg(elR,wrR,6,INK);
+    out+=dbAt(wrL,5.5)+dbAt(wrR,5.5)+`<circle cx="${hd[0]}" cy="${hd[1]}" r="9" fill="${INK}"/>`;
+    return out;
+  }
+  const p=lerpPose(m.a,m.b,k), J=fkSide(p);
+  const aj=J[m.anchor[0]], dx=m.anchor[1]-aj[0], dy=m.anchor[2]-aj[1];
+  for(const key in J) J[key]=[J[key][0]+dx,J[key][1]+dy];
+  if(m.eq==="bar") out+=`<circle cx="${J.wr[0]}" cy="${J.wr[1]}" r="12" fill="var(--day)" opacity=".85"/>`;
+  if(m.eq==="hipbar") out+=`<circle cx="${J.hp[0]}" cy="${J.hp[1]-11}" r="12" fill="var(--day)" opacity=".85"/>`;
+  out+=seg(J.hp,J.kn2,7,FAR,.55)+seg(J.kn2,J.an2,6,FAR,.55)+seg(J.nk,J.el2,6,FAR,.55)+seg(J.el2,J.wr2,5,FAR,.55);
+  if(m.eq==="db") out+=`<g opacity=".55">${dbAt(J.wr2,5)}</g>`;
+  out+=seg(J.hp,J.nk,10,INK)+seg(J.hp,J.kn,8,INK)+seg(J.kn,J.an,7,INK);
+  out+=`<circle cx="${J.hd[0].toFixed(1)}" cy="${J.hd[1].toFixed(1)}" r="8.5" fill="${INK}"/>`;
+  out+=seg(J.nk,J.el,7,INK)+seg(J.el,J.wr,6,INK);
+  if(m.eq==="db") out+=dbAt(J.wr,5.5);
+  if(m.eq==="goblet") out+=dbAt(J.wr,7.5);
+  if(m.eq==="bar"||m.eq==="hipbar"){const c=m.eq==="bar"?J.wr:[J.hp[0],J.hp[1]-11]; out+=`<circle cx="${c[0]}" cy="${c[1]}" r="3" fill="var(--surface)"/>`;}
+  return out;
+}
+
+let animRAF=null, animPlaying=true, animMove=null, animT0=0, animK=0;
+const reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+function animFrame(ts){
+  if(!animT0) animT0=ts;
+  const period=3200, ph=((ts-animT0)%period)/period;
+  // hold at both ends: 0-.15 hold a, .15-.5 move, .5-.65 hold b, .65-1 return
+  let k = ph<.15?0 : ph<.5?(1-Math.cos((ph-.15)/.35*Math.PI))/2 : ph<.65?1 : (1+Math.cos((ph-.65)/.35*Math.PI))/2;
+  animK=k; paintAnim();
+  if(animPlaying) animRAF=requestAnimationFrame(animFrame);
+}
+function paintAnim(){ document.getElementById("animSvg").innerHTML = drawMove(animMove, animK); }
+function openHow(id, title){
+  const m=MOVES[id]; if(!m) return;
+  animMove=m; animK=reduceMotion?1:0; animT0=0;
+  document.getElementById("sheetTitle").textContent=title;
+  document.getElementById("animBox").innerHTML=`<svg viewBox="10 12 160 118" role="img" aria-label="${title} hareket animasyonu"><g id="animSvg"></g></svg>`;
+  document.getElementById("cueList").innerHTML=m.cues.map(c=>`<li>${c}</li>`).join("");
+  const nt=document.getElementById("animNote"); nt.textContent = m.note || "Açık renkli uzuvlar gövdenin uzak tarafı."; nt.hidden = m.view==="front";
+  document.getElementById("sheet").classList.add("on"); document.getElementById("sheetBg").classList.add("on");
+  animPlaying=!reduceMotion; document.getElementById("animToggle").textContent=animPlaying?"Durdur":"Oynat";
+  paintAnim(); cancelAnimationFrame(animRAF); if(animPlaying) animRAF=requestAnimationFrame(animFrame);
+  document.getElementById("sheetClose").focus();
+}
+function closeHow(){ cancelAnimationFrame(animRAF); document.getElementById("sheet").classList.remove("on"); document.getElementById("sheetBg").classList.remove("on"); }
+document.getElementById("sheetClose").onclick=closeHow;
+document.getElementById("sheetBg").onclick=()=>{ closeHow(); closeRes(); };
+document.getElementById("resClose").onclick=closeRes;
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeHow(); });
+document.getElementById("animToggle").onclick=()=>{
+  animPlaying=!animPlaying; document.getElementById("animToggle").textContent=animPlaying?"Durdur":"Oynat";
+  if(animPlaying){ animT0=0; animRAF=requestAnimationFrame(animFrame);} else cancelAnimationFrame(animRAF);
+};
+
+
+/* ---------- vücut ölçüleri ---------- */
+let measures=[], height=168;
+const LS_M="ev-antrenman-measures", LS_H="ev-antrenman-height";
+const MF={kg:["Kilo","kg"],bf:["Yağ oranı","%"],lean:["Yağsız kütle","kg"],waist:["Bel","cm"],chest:["Göğüs","cm"],arm:["Kol","cm"],neck:["Boyun","cm"],bmi:["BMI",""]};
+function derive(m){
+  const h=m.height||height, o={...m};
+  if(m.kg) o.bmi=+(m.kg/Math.pow(h/100,2)).toFixed(1);
+  if(m.waist&&m.neck&&m.waist>m.neck){ // US Navy, erkek, cm
+    const bf=495/(1.0324-0.19077*Math.log10(m.waist-m.neck)+0.15456*Math.log10(h))-450;
+    if(bf>2&&bf<60){ o.bf=+bf.toFixed(1); if(m.kg) o.lean=+(m.kg*(1-bf/100)).toFixed(1); }
+  }
+  return o;
+}
+function bmiCat(b){return b<18.5?"düşük":b<25?"normal":b<30?"fazla kilolu":"obez"}
+function lastVal(key){for(const m of measures){const d=derive(m); if(d[key]!==undefined) return d[key];} return undefined;}
+function firstVal(key){for(let i=measures.length-1;i>=0;i--){const d=derive(measures[i]); if(d[key]!==undefined) return d[key];} return undefined;}
+function statHTML(key,extra){
+  const v=lastVal(key), f=firstVal(key), [lb,u]=MF[key];
+  if(v===undefined) return `<div class="stat"><div class="num">–</div><div class="lb">${lb}</div></div>`;
+  const d=+(v-f).toFixed(1);
+  const good = key==="lean"||key==="arm"||key==="chest" ? d>0 : d<0;
+  const dl = measures.length>1&&d!==0?`<div class="dl ${good?"down":"up"}">${d>0?"+":""}${d} ${u} başlangıca göre</div>`:"";
+  return `<div class="stat"><div class="num">${v}<small>${u}</small></div><div class="lb">${lb}${extra?` · ${extra}`:""}</div>${dl}</div>`;
+}
+function renderBody(){
+  document.getElementById("m_height").value=height;
+  const b=lastVal("bmi");
+  document.getElementById("bodyStats").innerHTML = measures.length
+    ? statHTML("kg")+statHTML("bmi",b!==undefined?bmiCat(b):"")+statHTML("bf")+statHTML("lean")+statHTML("waist")+statHTML("arm")
+    : `<div class="empty" style="grid-column:1/-1">İlk ölçümünü aşağıdan gir.</div>`;
+  document.getElementById("bfNote").textContent = lastVal("bf")!==undefined
+    ? "Yağ oranı US Navy formülüyle (bel, boyun, boy) hesaplanıyor. Mutlak değerde ±3–4 puan sapabilir; asıl bakılacak şey trend."
+    : "Yağ oranı için bel ve boyun ölçüsü gerekli.";
+  renderMChart();
+  const L2=document.getElementById("mList");
+  L2.innerHTML = measures.map(m=>{const d=derive(m); const parts=["kg","waist","neck","arm","chest"].filter(k=>m[k]).map(k=>`${MF[k][0]} ${m[k]}${MF[k][1]}`); if(d.bf!==undefined) parts.push(`Yağ %${d.bf}`);
+    return `<div class="card"><div class="mrow"><b>${fmtDate(m.date)}</b><button class="x" data-mdel="${m._id}">Sil</button></div><div class="hist-ex">${parts.join(" · ")}</div></div>`}).join("");
+}
+function chartSVG(pts,unit,label){
+  if(pts.length<2) return `<div class="empty">${pts.length?"Grafik için bir ölçüm daha lazım.":"Henüz veri yok."}</div>`;
+  const W=520,H=200,P=38; const vs=pts.map(p=>p.v); let mn=Math.min(...vs), mx=Math.max(...vs); if(mn===mx){mn-=1;mx+=1}
+  const x=i=>P+(i*(W-P*2)/(pts.length-1)), y=v=>H-P-((v-mn)/(mx-mn))*(H-P*2);
+  const path=pts.map((p,i)=>`${i?"L":"M"}${x(i).toFixed(1)},${y(p.v).toFixed(1)}`).join(" ");
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${label} grafiği">
+    <line x1="${P}" y1="${H-P}" x2="${W-P}" y2="${H-P}" stroke="var(--line)"/>
+    <text x="${P-6}" y="${y(mx)+4}" text-anchor="end" font-size="12" fill="var(--muted)">${+mx.toFixed(1)}</text>
+    <text x="${P-6}" y="${y(mn)+4}" text-anchor="end" font-size="12" fill="var(--muted)">${+mn.toFixed(1)}</text>
+    <path d="${path}" fill="none" stroke="var(--day)" stroke-width="3" stroke-linejoin="round"/>
+    ${pts.map((p,i)=>`<circle cx="${x(i)}" cy="${y(p.v)}" r="4.5" fill="var(--surface)" stroke="var(--day)" stroke-width="2.5"/>`).join("")}
+    <text x="${P}" y="${H-10}" font-size="12" fill="var(--muted)">${fmtDate(pts[0].date)}</text>
+    <text x="${W-P}" y="${H-10}" font-size="12" fill="var(--muted)" text-anchor="end">${fmtDate(pts[pts.length-1].date)} · son ${pts[pts.length-1].v} ${unit}</text></svg>`;
+}
+function renderMChart(){
+  const key=document.getElementById("mPick").value;
+  const pts=measures.slice().reverse().map(m=>{const d=derive(m); return d[key]!==undefined?{date:m.date,v:d[key]}:null}).filter(Boolean);
+  document.getElementById("mChart").innerHTML=chartSVG(pts,MF[key][1],MF[key][0]);
+}
+document.getElementById("mPick").addEventListener("change",renderMChart);
+document.getElementById("mSave").addEventListener("click",async()=>{
+  const st=document.getElementById("mStatus"), num=id=>{const v=parseFloat(String(document.getElementById(id).value).replace(",","."));return isFinite(v)&&v>0?v:null};
+  const h=num("m_height"); if(h&&h>100&&h<230) height=h;
+  const rec={date:new Date().toISOString(),height};
+  [["kg","m_kg"],["waist","m_waist"],["neck","m_neck"],["arm","m_arm"],["chest","m_chest"]].forEach(([k,id])=>{const v=num(id); if(v) rec[k]=v;});
+  if(Object.keys(rec).length<=2){ st.textContent="En az bir ölçü gir."; return; }
+  const id="m"+Date.now(); let ok=false;
+  if(db){ try{ await db.doc("measurements/"+id).set(rec); await db.doc("settings/profile").set({height}); ok=true; }catch(e){} }
+  else { measures.unshift({...rec,_id:id}); lsSet(LS_M,measures); lsSet(LS_H,height); ok=true; }
+  if(ok){ ["m_kg","m_waist","m_neck","m_arm","m_chest"].forEach(i=>document.getElementById(i).value=""); st.textContent="Kaydedildi."; if(!db) renderBody(); }
+  else st.textContent="Kaydedilemedi. Bağlantını kontrol edip tekrar dene.";
+});
+document.getElementById("mList").addEventListener("click",async e=>{
+  const id=e.target.dataset&&e.target.dataset.mdel; if(!id||!confirm("Bu ölçüm silinsin mi?")) return;
+  if(db){ try{ await db.doc("measurements/"+id).delete(); }catch(err){} }
+  else { measures=measures.filter(m=>m._id!==id); lsSet(LS_M,measures); renderBody(); }
+});
+
+
+/* ---------- program düzenleyici ---------- */
+let pday="A", pedit=null;
+function saveProgram(){ lsSet(LS_PROG, PROGRAM); lsSet(LS_CUSTOM, CUSTOM); if(draft && draft.fresh){ draft=newDraft(day); saveDraft(); } renderSession(); }
+function renderProg(){
+  document.querySelectorAll(".dayseg button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.pday===pday)));
+  const list=PROGRAM[pday];
+  document.getElementById("progList").innerHTML = list.map((ex,i)=>`<div class="prog-item"><div class="top"><div><div class="nm">${escapeHTML(ex.name)}</div><div class="meta">${ex.sets} set × ${escapeHTML(ex.target)} · ${ex.rest} sn dinlenme</div></div>
+    <div class="ctl"><button data-pmove="${i}" data-dir="-1" aria-label="Yukarı" ${i?"":"disabled"}>↑</button><button data-pmove="${i}" data-dir="1" aria-label="Aşağı" ${i<list.length-1?"":"disabled"}>↓</button><button data-pedit="${i}" aria-label="Düzenle">✎</button><button data-pdel="${i}" aria-label="Çıkar">✕</button></div></div>
+    ${pedit===i?`<div class="pedit">
+      <label>Ad<input id="eName" value="${escapeHTML(ex.name)}"></label>
+      <label>Set<input id="eSets" inputmode="numeric" value="${ex.sets}"></label>
+      <label>Hedef<input id="eTarget" value="${escapeHTML(ex.target)}" placeholder="ör. 8–10"></label>
+      <label>Dinlenme (sn)<input id="eRest" inputmode="numeric" value="${ex.rest}"></label>
+      ${ex.kind==="kg"?`<label>Artış (kg)<input id="eInc" inputmode="decimal" value="${ex.inc||2}"></label>`:`<label>Ölçü<input value="${ex.kind==="sec"?"Süre":"Tekrar"}" disabled></label>`}
+      <button class="save" data-psave="${i}">Kaydet</button></div>`:""}</div>`).join("") || `<div class="empty">Bu günde hareket yok.</div>`;
+  const used=new Set([...PROGRAM.A,...PROGRAM.B].map(e=>e.id));
+  const opts=[...LIBRARY,...CUSTOM].filter(e=>!used.has(e.id));
+  document.getElementById("addPick").innerHTML = opts.map(e=>`<option value="${e.id}">${escapeHTML(e.name)}</option>`).join("")+`<option value="__custom">+ Özel hareket…</option>`;
+  document.getElementById("customForm").hidden = document.getElementById("addPick").value!=="__custom";
+}
+document.getElementById("progCard").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return; const list=PROGRAM[pday];
+  if(b.dataset.pday){ pday=b.dataset.pday; pedit=null; renderProg(); return; }
+  if(b.dataset.pmove!==undefined){ const i=+b.dataset.pmove, j=i+(+b.dataset.dir); [list[i],list[j]]=[list[j],list[i]]; pedit=null; saveProgram(); renderProg(); return; }
+  if(b.dataset.pedit!==undefined){ const i=+b.dataset.pedit; pedit = pedit===i?null:i; renderProg(); return; }
+  if(b.dataset.pdel!==undefined){ const i=+b.dataset.pdel; if(!confirm(`${list[i].name} programdan çıkarılsın mı? Geçmiş kayıtları kalır.`)) return; list.splice(i,1); pedit=null; saveProgram(); renderProg(); return; }
+  if(b.dataset.psave!==undefined){ const ex=list[+b.dataset.psave];
+    const nm=document.getElementById("eName").value.trim(), st=parseInt(document.getElementById("eSets").value), tg=document.getElementById("eTarget").value.trim(), rs=parseInt(document.getElementById("eRest").value);
+    if(nm) ex.name=nm; if(st>0&&st<=10) ex.sets=st; if(tg) ex.target=tg; if(rs>=0&&rs<=600) ex.rest=rs;
+    const inc=document.getElementById("eInc"); if(inc){ const v=parseFloat(inc.value.replace(",",".")); if(v>0&&v<=20) ex.inc=v; }
+    const c=CUSTOM.find(x=>x.id===ex.id); if(c) Object.assign(c,{name:ex.name});
+    pedit=null; saveProgram(); renderProg(); return; }
+  if(b.id==="addBtn"){ const v=document.getElementById("addPick").value; if(!v||v==="__custom") return;
+    const src=[...LIBRARY,...CUSTOM].find(x=>x.id===v); list.push(JSON.parse(JSON.stringify(src))); saveProgram(); renderProg(); return; }
+  if(b.id==="cSave"){ const nm=document.getElementById("cName").value.trim(); if(!nm) return;
+    const kind=document.getElementById("cKind").value;
+    const ex={id:"c"+Date.now(), name:nm, sets:3, target:kind==="sec"?"30":"10", kind, rest:60, inc:2};
+    CUSTOM.push({...ex}); list.push(ex); document.getElementById("cName").value=""; saveProgram(); renderProg(); return; }
+  if(b.id==="progReset"){ if(!confirm("Program varsayılana dönsün mü? Özel hareketlerin listede kalır, geçmiş kayıtlar etkilenmez.")) return;
+    PROGRAM=JSON.parse(JSON.stringify(DEFAULT_PROGRAM)); pedit=null; saveProgram(); renderProg(); }
+});
+document.getElementById("addPick").addEventListener("change",()=>{ document.getElementById("customForm").hidden = document.getElementById("addPick").value!=="__custom"; });
+
+/* yedekleme */
+const LS_BK="ev-antrenman-lastbackup";
+function backupInfo(){
+  const last=lsGet(LS_BK), n=sessions.length, m=measures.length;
+  document.getElementById("backupInfo").textContent = `${n} antrenman, ${m} ölçüm kayıtlı. ` + (last?`Son yedek: ${new Date(last).toLocaleDateString("tr-TR")}.`:"Henüz yedek alınmadı.") + " Veriler sadece bu telefonda duruyor; yedeği iCloud Drive'a kaydet.";
+  const days = last ? (Date.now()-new Date(last).getTime())/864e5 : Infinity;
+  const show = (sessions.length+measures.length)>0 && days>14;
+  document.getElementById("backupBanner").hidden=!show;
+  if(show) document.getElementById("backupBannerText").textContent = last?`Son yedek ${Math.floor(days)} gün önce.`:"Verilerinin henüz yedeği yok.";
+}
+async function doExport(){
+  const data={app:"ev-antrenman",version:2,exportedAt:new Date().toISOString(),sessions,measures,height,program:PROGRAM,custom:CUSTOM};
+  const name=`antrenman-yedek-${new Date().toISOString().slice(0,10)}.json`;
+  const blob=new Blob([JSON.stringify(data,null,1)],{type:"application/json"});
+  const st=document.getElementById("bStatus");
+  try{
+    const file=new File([blob],name,{type:"application/json"});
+    if(navigator.canShare && navigator.canShare({files:[file]})){ await navigator.share({files:[file],title:"Antrenman yedeği"}); }
+    else { const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),4000); }
+    lsSet(LS_BK,new Date().toISOString()); st.textContent="Yedek hazırlandı."; backupInfo();
+  }catch(e){ if(e&&e.name==="AbortError"){ st.textContent="Yedekleme iptal edildi."; } else st.textContent="Yedek oluşturulamadı: "+(e&&e.message||e); }
+}
+document.getElementById("bExport").onclick=doExport;
+document.getElementById("bannerGo").onclick=doExport;
+document.getElementById("bImport").onclick=()=>document.getElementById("bFile").click();
+document.getElementById("bFile").addEventListener("change",async e=>{
+  const f=e.target.files[0], st=document.getElementById("bStatus"); if(!f) return;
+  try{
+    const d=JSON.parse(await f.text());
+    if(d.app!=="ev-antrenman"||!Array.isArray(d.sessions)) throw new Error("Bu dosya bir antrenman yedeği değil.");
+    if(!confirm(`Yedekte ${d.sessions.length} antrenman ve ${(d.measures||[]).length} ölçüm var. Mevcut veriler bunlarla değiştirilsin mi?`)) return;
+    sessions=d.sessions; measures=d.measures||[]; if(d.height) height=d.height;
+    if(d.program&&Array.isArray(d.program.A)){ PROGRAM=d.program; lsSet(LS_PROG,PROGRAM); } if(Array.isArray(d.custom)){ CUSTOM=d.custom; lsSet(LS_CUSTOM,CUSTOM); }
+    lsSet(LS_SESS,sessions); lsSet(LS_M,measures); lsSet(LS_H,height);
+    st.textContent="Geri yüklendi."; afterData(); backupInfo();
+  }catch(err){ st.textContent="Geri yüklenemedi: "+err.message; }
+  e.target.value="";
+});
+
+/* boot */
+(async function boot(){
+  await loadStore();
+  const sp=lsGet(LS_PROG); if(sp && Array.isArray(sp.A) && Array.isArray(sp.B)) PROGRAM=sp;
+  CUSTOM=lsGet(LS_CUSTOM)||[];
+  const saved = lsGet(LS_DRAFT);
+  sessions = lsGet(LS_SESS) || [];
+  measures = lsGet(LS_M) || []; height = lsGet(LS_H) || 168;
+  if(saved && PROGRAM[saved.day] && Array.isArray(saved.exercises)){ draft = saved; setDay(saved.day, true); }
+  else setDay(suggestedDay());
+  backupInfo(); startClock();
+  if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
+})();
+</script>
+</body>
+</html>
