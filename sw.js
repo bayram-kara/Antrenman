@@ -1,5 +1,5 @@
 // Uygulamayı güncellediğinde bu numarayı bir artır (v2, v3...)
-const VERSION = "v4";
+const VERSION = "v6";
 const CACHE = "ev-antrenman-" + VERSION;
 const FILES = [
   "./",
